@@ -1,0 +1,1889 @@
+[ {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 11421360,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "First Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 601282,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 116729062,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 1896218,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1405272,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 8443604,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    }, {
+      "name" : "@Isolated"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 431075,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "First Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 433214,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1514751,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 1214538,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1137133,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 1187168,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    }, {
+      "name" : "@Isolated"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 335709,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "First Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 481966,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1247467,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 1057589,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1293654,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 700070,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 1",
+  "description" : "",
+  "id" : "demo-feature-1",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_1.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 1148679,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Second Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 2980749,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1012685,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 993868,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 968637,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 652600,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 386600,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Second Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 429365,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 3657726,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 939556,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 849749,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 804417,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 306200,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Second Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 392159,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 906199,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 886100,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1793154,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 445188,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 2",
+  "description" : "",
+  "id" : "demo-feature-2",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_2.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 515751,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Third Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 328866,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 2082248,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 961366,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1656305,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 413969,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 313898,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Third Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 514896,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 682109,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 725729,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 611117,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 825800,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 302351,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Third Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 329721,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 829222,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 753526,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1823517,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 408409,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 3",
+  "description" : "",
+  "id" : "demo-feature-3",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_3.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 434497,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Ignored Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 315609,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 5270410,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 2228079,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1368066,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 381467,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 390875,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Ignored Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 263863,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 34360729,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 675266,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 517462,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 299358,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 351531,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Ignored Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 305345,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 720170,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 2413253,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 598289,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 360512,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  } ],
+  "name" : "Demo Feature 4, ignored",
+  "description" : "",
+  "id" : "demo-feature-4--ignored",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_4.feature",
+  "tags" : [ {
+    "name" : "@Ignore",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+} , {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 14168183,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "First Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 507197,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 83695343,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 1436918,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1204702,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 6958788,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    }, {
+      "name" : "@Isolated"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 395580,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "First Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 520028,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1305201,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 3345539,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1143975,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 844190,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    }, {
+      "name" : "@Isolated"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 408837,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "First Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-1;first-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 384034,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1288094,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 10775602,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1067852,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 601281,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 1",
+  "description" : "",
+  "id" : "demo-feature-1",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_1.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 432358,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Second Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 9094066,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1115750,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 993013,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 1691372,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 600426,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 327583,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Second Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 366499,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 981894,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 767211,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 768494,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 460156,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 355808,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Second Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-2;second-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 335281,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 2142975,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 1294082,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 788594,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 459729,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 2",
+  "description" : "",
+  "id" : "demo-feature-2",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_2.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 315609,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Third Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 821096,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 960511,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 3035061,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 764218,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 1062720,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 396008,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Third Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 442194,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 969064,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 809122,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 19600246,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 883106,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 933569,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Third Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-3;third-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 343834,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 1561366,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 789449,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 644047,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 431503,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Current"
+    } ]
+  } ],
+  "name" : "Demo Feature 3",
+  "description" : "",
+  "id" : "demo-feature-3",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_3.feature",
+  "tags" : [ {
+    "name" : "@Current",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+}, {
+  "line" : 2,
+  "elements" : [ {
+    "before" : [ {
+      "result" : {
+        "duration" : 458017,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 5,
+    "name" : "Ignored Feature, First Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--first-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 304918,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 834781,
+        "status" : "passed"
+      },
+      "line" : 6,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 605986,
+        "status" : "passed"
+      },
+      "line" : 7,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 946399,
+        "status" : "passed"
+      },
+      "line" : 8,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 477690,
+        "status" : "passed"
+      },
+      "line" : 9,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 374625,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 12,
+    "name" : "Ignored Feature, Second Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--second-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 339985,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 818958,
+        "status" : "passed"
+      },
+      "line" : 13,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 582892,
+        "status" : "passed"
+      },
+      "line" : 14,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 574768,
+        "status" : "passed"
+      },
+      "line" : 15,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 328011,
+        "status" : "passed"
+      },
+      "line" : 16,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  }, {
+    "before" : [ {
+      "result" : {
+        "duration" : 287383,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.openBrowser(Scenario)"
+      }
+    } ],
+    "line" : 19,
+    "name" : "Ignored Feature, Third Scenario",
+    "description" : "",
+    "id" : "demo-feature-4--ignored;ignored-feature--third-scenario",
+    "after" : [ {
+      "result" : {
+        "duration" : 298075,
+        "status" : "passed"
+      },
+      "match" : {
+        "location" : "Hooks.tearDown(Scenario)"
+      }
+    } ],
+    "type" : "scenario",
+    "keyword" : "Scenario",
+    "steps" : [ {
+      "result" : {
+        "duration" : 807411,
+        "status" : "passed"
+      },
+      "line" : 20,
+      "name" : "an environment exists",
+      "match" : {
+        "location" : "DemoStepDefs.an_environment_exists()"
+      },
+      "keyword" : "Given "
+    }, {
+      "result" : {
+        "duration" : 636777,
+        "status" : "passed"
+      },
+      "line" : 21,
+      "name" : "take preliminary step",
+      "match" : {
+        "location" : "DemoStepDefs.take_preliminary_step()"
+      },
+      "keyword" : "And "
+    }, {
+      "result" : {
+        "duration" : 656449,
+        "status" : "passed"
+      },
+      "line" : 22,
+      "name" : "a condition is met",
+      "match" : {
+        "location" : "DemoStepDefs.condition()"
+      },
+      "keyword" : "When "
+    }, {
+      "result" : {
+        "duration" : 350677,
+        "status" : "passed"
+      },
+      "line" : 23,
+      "name" : "assert true",
+      "match" : {
+        "location" : "DemoStepDefs.assert_true()"
+      },
+      "keyword" : "Then "
+    } ],
+    "tags" : [ {
+      "name" : "@Ignore"
+    } ]
+  } ],
+  "name" : "Demo Feature 4, ignored",
+  "description" : "",
+  "id" : "demo-feature-4--ignored",
+  "keyword" : "Feature",
+  "uri" : "features/site1/demo_feature_4.feature",
+  "tags" : [ {
+    "name" : "@Ignore",
+    "type" : "Tag",
+    "location" : {
+      "line" : 1,
+      "column" : 1
+    }
+  } ]
+} ]

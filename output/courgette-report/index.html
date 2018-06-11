@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Courgette-JVM Report</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="css/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/core.min.css" rel="stylesheet">
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <li class="navbar-brand" href="#">Courgette-JVM Report</li>
+</nav>
+
+<div class="content-wrapper">
+
+    <div class="container-fluid">
+        <!-- Result Cards -->
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <div class="card text-white bg-primary o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw"></i>
+                        </div>
+                        <div class="mr-10">
+                            Total Scenarios
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" style="cursor: pointer;"
+                         onclick="setSearch('');">
+                        <span class="float-left text-white" id="card-total">8</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <div class="card text-white bg-success o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw"></i>
+                        </div>
+                        <div class="mr-10">
+                            Passed Scenarios
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" style="cursor: pointer;"
+                         onclick="setSearch('Passed');">
+                        <span class="float-left text-white" id="card-passed">8</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <div class="card text-white bg-danger o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw"></i>
+                        </div>
+                        <div class="mr-10">
+                            Failed Scenarios
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1" style="cursor: pointer;"
+                         onclick="setSearch('Failed');">
+                        <span class="float-left text-white" id="card-failed">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <div class="card text-white bg-warning o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw"></i>
+                        </div>
+                        <div class="mr-10">
+                            Re-run Scenarios
+                        </div>
+                    </div>
+                    <div class="card-footer text-white clearfix small z-1">
+                        <span class="float-left" id="card-rerun">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa"></i>Run Information
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                Timestamp:
+                            </div>
+                            <div>2018-06-11T16:16:16.582Z</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Duration:
+                            </div>
+                            <div>0 min, 2 sec</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Parallel Threads:
+                            </div>
+                            <div>2</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Parallel Run Level:
+                            </div>
+                            <div>Scenario</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Re-run Failed:
+                            </div>
+                            <div>false</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Cucumber Tags:
+                            </div>
+                            <div>@Isolated</div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-3">
+                                Cucumber Features:
+                            </div>
+                            <div>classpath:features</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="mt-3 mb-3">
+                        <canvas id="pieChart" width="100%" height="321"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Table -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i>
+                Results
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th width="95%">Scenario Name</th>
+                            <th>Result</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#75d00ab3-921c-425d-8223-fab6b358b1e1">First Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#d2cdaca8-13da-4365-b663-5880bac59729">First Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#d4a9bc02-6e53-40a7-aee1-ea9416d43978">First Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#c42ff2d4-6144-48cc-805c-a63c1c7f3908">Second Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#5a6d962b-901e-4e49-b838-b93069a1c302">Second Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#20fea36d-c0a6-47d0-9d0f-069159e73428">Second Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#4fa80fa7-33e4-4813-add9-e6801ab4a725">Third Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#ce9a2185-fb5c-4276-8eae-60bfe9c2a308">Third Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#154a94e9-d4f4-462b-9145-d81fe429cd76">Third Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#186a9952-cc5f-4374-97ac-7212493b6ac8">Ignored Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#ca991527-b9f5-43cd-b3f3-5c3f360cd259">Ignored Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#206764ae-25e9-444f-beca-4652df4f0a33">Ignored Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#da81d8ff-d39f-47af-a00e-dae13da42bed">First Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#fab4adcc-d414-466d-8767-6d964c6a0f3c">First Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#bcfd01c4-f80a-4029-984c-4c0140fd1a82">First Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#c590b8bf-e290-4ac5-874a-d0b06a6e80fc">Second Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#94a96c2d-7eba-4073-bf82-bb55c8eb9791">Second Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#7b7be357-984e-4e7d-82c4-441ea5602dd5">Second Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#2626bcee-c252-43fc-b86a-e88987059b4e">Third Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#3b9bf70d-5101-45ca-8184-c8b1cfdb3e7e">Third Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#ee6ec528-0d90-40d1-b0cf-275323b9dc88">Third Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#72c30ae0-f888-43f7-b728-862eadaa2739">Ignored Feature, First Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#0fb1c234-4b4c-40cb-8aca-9edb548679b5">Ignored Feature, Second Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+<tr>
+                                    <td>
+                                        <a href="" data-toggle="modal" data-target="#25b28e3a-6520-452d-b26a-7cc3a6c96caf">Ignored Feature, Third Scenario</a>
+                                    </td>
+                                    <td>
+                                        <span class="float-left badge badge-success">Passed</span>
+                                    </td>
+                                </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+    <!-- Modals -->
+    <div class="modal fade" id="75d00ab3-921c-425d-8223-fab6b358b1e1" tabindex="-1" role="dialog" aria-labelledby="75d00ab3-921c-425d-8223-fab6b358b1e1" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">11 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">116 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">8 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="d2cdaca8-13da-4365-b663-5880bac59729" tabindex="-1" role="dialog" aria-labelledby="d2cdaca8-13da-4365-b663-5880bac59729" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="d4a9bc02-6e53-40a7-aee1-ea9416d43978" tabindex="-1" role="dialog" aria-labelledby="d4a9bc02-6e53-40a7-aee1-ea9416d43978" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="c42ff2d4-6144-48cc-805c-a63c1c7f3908" tabindex="-1" role="dialog" aria-labelledby="c42ff2d4-6144-48cc-805c-a63c1c7f3908" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">2 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="5a6d962b-901e-4e49-b838-b93069a1c302" tabindex="-1" role="dialog" aria-labelledby="5a6d962b-901e-4e49-b838-b93069a1c302" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">3 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="20fea36d-c0a6-47d0-9d0f-069159e73428" tabindex="-1" role="dialog" aria-labelledby="20fea36d-c0a6-47d0-9d0f-069159e73428" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="4fa80fa7-33e4-4813-add9-e6801ab4a725" tabindex="-1" role="dialog" aria-labelledby="4fa80fa7-33e4-4813-add9-e6801ab4a725" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">2 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="ce9a2185-fb5c-4276-8eae-60bfe9c2a308" tabindex="-1" role="dialog" aria-labelledby="ce9a2185-fb5c-4276-8eae-60bfe9c2a308" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="154a94e9-d4f4-462b-9145-d81fe429cd76" tabindex="-1" role="dialog" aria-labelledby="154a94e9-d4f4-462b-9145-d81fe429cd76" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="186a9952-cc5f-4374-97ac-7212493b6ac8" tabindex="-1" role="dialog" aria-labelledby="186a9952-cc5f-4374-97ac-7212493b6ac8" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">5 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">2 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="ca991527-b9f5-43cd-b3f3-5c3f360cd259" tabindex="-1" role="dialog" aria-labelledby="ca991527-b9f5-43cd-b3f3-5c3f360cd259" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">34 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="206764ae-25e9-444f-beca-4652df4f0a33" tabindex="-1" role="dialog" aria-labelledby="206764ae-25e9-444f-beca-4652df4f0a33" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">2 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="da81d8ff-d39f-47af-a00e-dae13da42bed" tabindex="-1" role="dialog" aria-labelledby="da81d8ff-d39f-47af-a00e-dae13da42bed" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">14 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">83 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">6 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="fab4adcc-d414-466d-8767-6d964c6a0f3c" tabindex="-1" role="dialog" aria-labelledby="fab4adcc-d414-466d-8767-6d964c6a0f3c" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">3 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="bcfd01c4-f80a-4029-984c-4c0140fd1a82" tabindex="-1" role="dialog" aria-labelledby="bcfd01c4-f80a-4029-984c-4c0140fd1a82" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>First Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_1.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">10 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="c590b8bf-e290-4ac5-874a-d0b06a6e80fc" tabindex="-1" role="dialog" aria-labelledby="c590b8bf-e290-4ac5-874a-d0b06a6e80fc" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">9 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="94a96c2d-7eba-4073-bf82-bb55c8eb9791" tabindex="-1" role="dialog" aria-labelledby="94a96c2d-7eba-4073-bf82-bb55c8eb9791" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="7b7be357-984e-4e7d-82c4-441ea5602dd5" tabindex="-1" role="dialog" aria-labelledby="7b7be357-984e-4e7d-82c4-441ea5602dd5" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Second Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_2.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">2 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="2626bcee-c252-43fc-b86a-e88987059b4e" tabindex="-1" role="dialog" aria-labelledby="2626bcee-c252-43fc-b86a-e88987059b4e" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">3 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="3b9bf70d-5101-45ca-8184-c8b1cfdb3e7e" tabindex="-1" role="dialog" aria-labelledby="3b9bf70d-5101-45ca-8184-c8b1cfdb3e7e" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">19 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="ee6ec528-0d90-40d1-b0cf-275323b9dc88" tabindex="-1" role="dialog" aria-labelledby="ee6ec528-0d90-40d1-b0cf-275323b9dc88" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Third Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_3.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">1 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="72c30ae0-f888-43f7-b728-862eadaa2739" tabindex="-1" role="dialog" aria-labelledby="72c30ae0-f888-43f7-b728-862eadaa2739" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, First Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 5</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="0fb1c234-4b4c-40cb-8aca-9edb548679b5" tabindex="-1" role="dialog" aria-labelledby="0fb1c234-4b4c-40cb-8aca-9edb548679b5" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, Second Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 12</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="25b28e3a-6520-452d-b26a-7cc3a6c96caf" tabindex="-1" role="dialog" aria-labelledby="25b28e3a-6520-452d-b26a-7cc3a6c96caf" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header text-white bg-dark">
+<span class="modal-title"><h5>Ignored Feature, Third Scenario</h5>
+<div class="font-italic text-muted">demo_feature_4.feature - line 19</div></span>
+<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.openBrowser(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Given an environment exists
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+And take preliminary step
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+When a condition is met
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Then assert true
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-lg-9" style="overflow-wrap:break-word;">
+Hooks.tearDown(Scenario)
+</div>
+<div class="col-lg-3">
+<span class="float-right">
+<span class="badge badge-info">0 ms</span>
+<span class="badge badge-success">Passed</span>
+</span>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/dataTables.bootstrap4.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/core.min.js"></script>
+<script src="js/mdb.js"></script>
+<script src="js/Chart.min.js"></script>
+
+<script>
+    var passed = $('#card-passed').text();
+    var failed = $('#card-failed').text();
+    var rerun = $('#card-rerun').text();
+
+    var ctxP = document.getElementById("pieChart").getContext('2d');
+    var pieChart = new Chart(ctxP, {
+        type: 'pie',
+        data: {
+            labels: ["Passed", "Failed", "Re-run"],
+            datasets: [{
+                data: [passed, failed, rerun],
+                backgroundColor: ["#28a745", "#dc3545", "#ffbb33"]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+
+<script>
+    function setSearch(criteria) {
+        var search = "\"" + criteria + "\"";
+        if (criteria.length < 2) {
+            search = ''
+        }
+        $("input[type='search']").val(search).trigger($.Event("keyup", {keyCode: 13}));
+    }
+</script>
+
+</body>
+
+</html>
