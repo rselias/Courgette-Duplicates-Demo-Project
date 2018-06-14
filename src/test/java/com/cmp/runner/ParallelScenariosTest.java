@@ -11,15 +11,17 @@ import cucumber.api.CucumberOptions;
 @CourgetteOptions(
 		threads = 2,
 		runLevel = CourgetteRunLevel.SCENARIO,
-		rerunFailedScenarios = false,
+		rerunFailedScenarios = true,
 		showTestOutput = true,
 		reportTargetDir = "output",
 		cucumberOptions = @CucumberOptions(
-				features ="classpath:features",
+				features ="src/test/resources/features/site1",
 				glue ={"com.cmp.site1.stepDefinitions"},
-				plugin = { "rerun:target/rerunSmoke.txt", "pretty", "html:target/cucumber-html-report", 
-				"json:output/cucumber-report/cucumber.json"},
-				tags = {"@Isolated"},
+				plugin = { "pretty",
+						"html:target/cucumber-html-report",
+						"json:output/cucumber-report/cucumber.json",
+						"junit:output/test.xml"},
+				tags = {"@Current"},
 				monochrome = true,
 				dryRun = false,
 				strict = true
